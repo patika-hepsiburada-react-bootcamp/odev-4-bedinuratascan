@@ -1,1 +1,1 @@
-export { default } from './query';
+export { GET_WEATHER_QUERY } from './query';
