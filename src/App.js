@@ -1,12 +1,12 @@
 import React from 'react'
 import { CityProvider } from './contexts/CityContext'
 import './App.css';
-import SearchInput from './components/SearchInput/SearchInput';
+import Container from '../src/components/Container/Container'
 
 function App() {
   return (
     <CityProvider>
-      <SearchInput />
+      <Container/>
     </CityProvider>
   );
 }

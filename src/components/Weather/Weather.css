@@ -1,0 +1,23 @@
+.WeatherInfo {
+    text-align: center;
+}
+
+.WeatherInfo .current-location {
+    color: white;
+    font-size: 23px;
+    font-weight: 400;
+    margin: 20px 0 -10px;
+    text-align: center;
+}
+  
+  .WeatherInfo .current-weather-description {
+    color: #61d9fb;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 24px;
+}
+
+.current-weather-description:first-letter {
+    text-transform: capitalize;
+  }
+  
