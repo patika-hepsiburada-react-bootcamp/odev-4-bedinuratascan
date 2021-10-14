@@ -1,17 +1,13 @@
+import './Weather.css'
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_WEATHER_QUERY } from '../../query/index'
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import { useCity } from '../../contexts/CityContext'
-import './Weather.css'
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ThermostatOutlinedIcon from '@mui/icons-material/ThermostatOutlined';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import AirOutlinedIcon from '@mui/icons-material/AirOutlined';
-
-
 import WeatherIcon from '../../utils/WeatherIcon'
 
 const Weather = () => {
@@ -28,47 +24,42 @@ const Weather = () => {
         return <Error />;
     }
     return (
-        <div className="weatherInfo">
-            <div className="current-location">
+        <div className="weather__info">
+            <div className="current__location">
                 {data.getCityByName.name}, {data.getCityByName.country}
             </div>
-            <div className="current-icon">
+            <div className="current__weather__description">
+                {data.getCityByName.weather.summary.description}
+            </div>
+            <div className="current__icon">
                 <WeatherIcon
                     code={data.getCityByName.weather.summary.icon}
-                    size={60}
+                    size={90}
                     alt={data.getCityByName.weather.summary.description}
                 />
             </div>
-            <h5 className="current-weather-description">
-                {data.getCityByName.weather.summary.description}
-            </h5>
-            <h6 className="current-temperature">
+            <div className="actual__temprature">
                 {Math.round(data.getCityByName.weather.temperature.actual)}
                 <span className="unit">°C </span>
-            </h6>
-            <h6 className="max-and-min-temperatures">
-                <ArrowUpwardIcon />
-                High:
-                <span className="current-max-temprature">
-                    {Math.round(data.getCityByName.weather.temperature.max)}°
-                </span>
-                <ArrowDownwardIcon />
-                Low:
-                <span className="current-min-temperature">
-                    <strong> {Math.round(data.getCityByName.weather.temperature.min)}°</strong>
-                </span>
-            </h6>
-            <div>
-                <ThermostatOutlinedIcon />
-                Real feel : {data.getCityByName.weather.temperature.feelsLike}
             </div>
-            <div>
-                <OpacityIcon />
-                Real feel : {data.getCityByName.weather.clouds.humidity}
-            </div>
-            <div>
-                <AirOutlinedIcon/>
-                Wind Speed : {data.getCityByName.weather.wind.speed}
+            <div className="other__info">
+                <div className="other__top__info">
+                    <div className="top__info__left">
+                        <ThermostatOutlinedIcon />
+                        Real feel : {data.getCityByName.weather.temperature.feelsLike}
+                        <span>°C</span>
+                    </div>
+                    <div className="top__info__right">
+                        <OpacityIcon />
+                        Humidity : {data.getCityByName.weather.clouds.humidity}
+                        <span>%</span>
+                    </div>
+                </div>
+                <div className="other__bottom__info">
+                    <AirOutlinedIcon />
+                    Wind Speed : {data.getCityByName.weather.wind.speed}
+                    <span>km/h</span>
+                </div>
             </div>
         </div>
     )
