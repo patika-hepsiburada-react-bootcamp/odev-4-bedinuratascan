@@ -4,4 +4,3 @@
 
 Weather app built using ReactJS, Apollo Client and GraphQL API
 
-* **Demo** - [live](https://react-vote-app.netlify.app/)
