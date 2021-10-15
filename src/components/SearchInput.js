@@ -3,8 +3,8 @@ import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
-import { Cities } from '../../utils/Cities'
-import { useCity } from '../../contexts/CityContext'
+import { Cities } from '../utils/Cities'
+import { useCity } from '../contexts/CityContext'
 import { makeStyles } from '@mui/styles';
 
 const CustomPaper = (props) => {

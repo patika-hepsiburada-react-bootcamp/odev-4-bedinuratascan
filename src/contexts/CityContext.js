@@ -4,7 +4,7 @@ const CityContext = createContext();
 
 
 export const CityProvider = ({ children }) => {
-    const [city, setCity] = useState('Ankara');
+    const [city, setCity] = useState('ankara');
 
     const values = {
         city,

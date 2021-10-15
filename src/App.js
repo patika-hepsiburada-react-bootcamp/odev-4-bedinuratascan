@@ -1,12 +1,11 @@
 import React from 'react'
 import { CityProvider } from './contexts/CityContext'
-import './App.css';
-import Container from '../src/components/Container/Container'
+import AppContainer from './components/AppContainer'
 
 function App() {
   return (
     <CityProvider>
-      <Container/>
+      <AppContainer />
     </CityProvider>
   );
 }
