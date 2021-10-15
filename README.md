@@ -2,6 +2,6 @@
 
 ## Weather App
 
-Weather app built using ReactJS, Apollo Client and GraphQL API
+Weather app built using ReactJS, Material UI, Apollo Client and GraphQL API
 
 * [Demo](https://reactgraphql-weather-app.netlify.app) --> In progress
