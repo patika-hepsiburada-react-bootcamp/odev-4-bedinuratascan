@@ -8,7 +8,8 @@ import { useCity } from '../../contexts/CityContext'
 import ThermostatOutlinedIcon from '@mui/icons-material/ThermostatOutlined';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import AirOutlinedIcon from '@mui/icons-material/AirOutlined';
-import WeatherIcon from '../../utils/WeatherIcon'
+import WeatherIcon from '../../utils/WeatherIcon';
+import ConvertTemp from '../../utils/ConvertTemp';
 
 const Weather = () => {
     const { city } = useCity();
@@ -39,14 +40,14 @@ const Weather = () => {
                 />
             </div>
             <div className="actual__temprature">
-                {Math.round(data.getCityByName.weather.temperature.actual)}
+                {ConvertTemp(data.getCityByName.weather.temperature.actual)}
                 <span className="unit">°C </span>
             </div>
             <div className="other__info">
                 <div className="other__top__info">
                     <div className="top__info__left">
                         <ThermostatOutlinedIcon />
-                        Real feel : {data.getCityByName.weather.temperature.feelsLike}
+                        Real feel : {ConvertTemp(data.getCityByName.weather.temperature.feelsLike)}
                         <span>°C</span>
                     </div>
                     <div className="top__info__right">
