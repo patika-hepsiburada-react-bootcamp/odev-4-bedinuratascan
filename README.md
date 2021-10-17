@@ -4,4 +4,4 @@
 
 Weather app built using ReactJS, Material UI, Styled Components, Apollo Client and GraphQL API
 
-* [Demo](https://reactgraphql-weather-app.netlify.app) --> In progress
+* [Demo](reactt-weather-app.netlify.app)
