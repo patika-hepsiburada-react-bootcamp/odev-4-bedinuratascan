@@ -5,6 +5,7 @@ import { Body } from './styles/Body.styled'
 import { Container } from './styles/Container.styled'
 import { Search } from './styles/Search.styled'
 import { WeatherContainer } from './styles/WeatherContainer.styled'
+import Footer from '../components/Footer'   
 
 const AppContainer = () => {
     return (
@@ -17,6 +18,7 @@ const AppContainer = () => {
                     <Weather />
                 </WeatherContainer>
             </Container>
+            <Footer/>
         </Body>
     )
 }

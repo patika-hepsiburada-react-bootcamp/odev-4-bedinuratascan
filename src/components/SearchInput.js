@@ -16,7 +16,6 @@ const useStyles = makeStyles(() => ({
       border: "none",
     },
   }));
-  
 
 const SearchInput = () => {
     const { city, setCity } = useCity();
@@ -24,7 +23,7 @@ const SearchInput = () => {
     const classes = useStyles();
 
     return (
-        <Stack spacing={2} sx={{ width: 300, bgcolor:'white',borderRadius:1 }} >
+        <Stack spacing={2} sx={{ width: 300, bgcolor:'white',borderRadius:1}} >
             <Autocomplete
                 freeSolo
                 id="search"
@@ -34,15 +33,25 @@ const SearchInput = () => {
                 forcePopupIcon={true}
                 PaperComponent={CustomPaper}
                 options={Cities.map((option) => option.name)}
-                classes={{notchedOutline:classes.input}}
                 renderInput={(params) => (
                     <TextField
                         {...params}
+                        classes={{notchedOutline:classes.input}}
+                        variant="outlined"
+                        className={classes.textField}
                         placeholder="Search for a city..."
                         InputProps={{
                             ...params.InputProps,
                             type: 'search',
-                            outline:'none'
+                            
+                            underline: {
+                                "&&&:before": {
+                                    borderBottom: "none"
+                                },
+                                "&&:after": {
+                                    borderBottom: "none"
+                                }
+                            }
                         }}
                     />
                 )}
